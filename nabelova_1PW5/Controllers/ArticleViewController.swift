@@ -14,7 +14,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-           cell.textLabel?.text = "Привет!"
+           cell.textLabel?.text = ":("
            return cell
     }
     
