@@ -7,23 +7,40 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateDelegate {
+    func didUpdated(finished: Bool) {
+        guard finished else {
+                return
+            }
+            news = manager.articles ?? []
+    }
+    
     
     var tableView: UITableView!
     var manager = ArticleManager()
-    var news: [ArticleModel]?
+    
+    var news: [ArticleModel]  = [] {
+        didSet{
+            DispatchQueue.main.async{ [self] in
+                tableView.reloadData()
+                tableView.isHidden = news.isEmpty
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        manager.update = self
             manager.setupArticles()
             view.backgroundColor = UIColor.darkGray
             setupArticleView()
+        
             
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.articles?.count ?? 2
+        return manager.articles?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -13,15 +13,23 @@ class ArticleManager{
         URL(string: "https://news.myseldon.com/api/Section?rubricId=\(rubric)&pageSize=8&pageIndex=\(pageIndex)")
     }
     
-    var articles: [ArticleModel]?
+    var articles: [ArticleModel]? {
+        didSet {
+            
+            self.update?.didUpdated(finished: true)
+                
+            }
+        }
+    
+    var update: UpdateDelegate?
     
     // MARK: - Fetch news
         private func fetchNews() {
-            let sem = DispatchSemaphore.init(value: 0)
+        
             guard let url = getURL(4, 1) else { return }
             let task = URLSession.shared.dataTask(with: url) { [weak self] data,
                 response, error in
-                defer { sem.signal() }
+                
                 if let error = error {
                     print(error)
                     return
@@ -34,7 +42,6 @@ class ArticleManager{
                 }
             }
             task.resume()
-            sem.wait()
         }
         
         public func setupArticles(){
