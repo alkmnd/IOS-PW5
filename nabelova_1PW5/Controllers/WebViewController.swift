@@ -10,11 +10,13 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
+    
     var url: URL?
     var webView: WKWebView = {
         let control = WKWebView()
         return control
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
@@ -23,6 +25,7 @@ class WebViewController: UIViewController {
         webView.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
         webView.pinLeft(to: view)
         webView.load(URLRequest(url: (url ?? URL(string:"https://skillbox.ru/media/code/chto_takoe_mvc_bazovye_kontseptsii_i_primer_prilozheniya/"))!))
+        view.backgroundColor = .white
         
     }
 }

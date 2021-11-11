@@ -8,9 +8,19 @@
 import UIKit
 
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var tableView: UITableView!
     var manager = ArticleManager()
     var news: [ArticleModel]?
+    
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            manager.setupArticles()
+            view.backgroundColor = UIColor.darkGray
+            setupArticleView()
+            
+        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return manager.articles?.count ?? 2
@@ -23,6 +33,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.layer.masksToBounds = true
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = manager.articles?[indexPath.row]
         let wc = WebViewController()
@@ -38,6 +49,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func handleMarkAsShare() {
         print("Share")
     }
+    
     func tableView(_ tableView: UITableView,
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
@@ -48,10 +60,12 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         action.backgroundColor = .systemBlue
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
     func tableView(_ tableView: UITableView,
                    editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
+    
     func tableView(_ tableView: UITableView,
                        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
@@ -63,15 +77,9 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         return UISwipeActionsConfiguration(actions: [action])
     
     }
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            manager.setupArticles()
-            view.backgroundColor = UIColor.darkGray
-            setupArticleView()
-            
-        }
+    
         
-        private func setupArticleView(){
+        private func setupArticleView() {
             let rect = CGRect(x: 15, y: 15, width: view.frame.width - 30, height: view.frame.height - 30)
             
             tableView = UITableView(frame: rect)
@@ -82,7 +90,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
             tableView.backgroundColor = UIColor.clear
             tableView.rowHeight = 160
             tableView.showsVerticalScrollIndicator = true
-            tableView.translatesAutoresizingMaskIntoConstraints = false //
+            tableView.translatesAutoresizingMaskIntoConstraints = false
             tableView.layer.cornerRadius = 35
             tableView.layer.masksToBounds = true
             
@@ -99,6 +107,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func updateLayout(with size: CGSize) {
        self.tableView.frame = CGRect.init(origin: .zero, size: size)
     }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
        super.viewWillTransition(to: size, with: coordinator)
        coordinator.animate(alongsideTransition: { (contex) in

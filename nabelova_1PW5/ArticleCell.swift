@@ -6,36 +6,42 @@
 //
 
 import Foundation
-
 import UIKit
 
 class ArticleCell: UITableViewCell {
+    
     public var articleModel = ArticleModel()
+    
     let image: UIImageView = {
         let control = UIImageView()
         return control
     }()
+    
     let titleLabel: UILabel = {
         let control = UILabel()
-        control.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        control.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         control.textAlignment = .center
-        control.textColor = UIColor.black
+        control.textColor = UIColor.white
+        control.lineBreakMode = .byWordWrapping
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
+    
     let descriptionLabel: UILabel = {
         let control = UILabel()
-        control.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        control.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         control.textAlignment = .left
-        control.textColor = UIColor.gray
+        control.textColor = UIColor.white
+        control.lineBreakMode = .byWordWrapping
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?)
-    {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
     required init?(coder aDecoder: NSCoder) {
            fatalError("init(coder:) has not been implemented")
        }
@@ -46,6 +52,7 @@ class ArticleCell: UITableViewCell {
            }
            return UIImage(data: data)
        }
+    
     func setupCell(){
             backgroundColor = UIColor.gray
             DispatchQueue.main.async {

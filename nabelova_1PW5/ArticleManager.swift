@@ -8,9 +8,11 @@
 import Foundation
 
 class ArticleManager{
+    
     private func getURL(_ rubric: Int, _ pageIndex: Int) -> URL? {
         URL(string: "https://news.myseldon.com/api/Section?rubricId=\(rubric)&pageSize=8&pageIndex=\(pageIndex)")
     }
+    
     var articles: [ArticleModel]?
     
     // MARK: - Fetch news
@@ -29,7 +31,6 @@ class ArticleManager{
                     JSONDecoder().decode(ArticlePage.self, from: data)
                     articlePage?.passTheRequestId()
                     self?.articles = articlePage?.news
-                    print("1234")
                 }
             }
             task.resume()
@@ -39,4 +40,6 @@ class ArticleManager{
         public func setupArticles(){
             fetchNews()
         }
+    
 }
+
