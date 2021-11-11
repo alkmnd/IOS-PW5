@@ -10,7 +10,7 @@ import UIKit
 struct ArticleModel: Decodable {
     var newsId: Int?
     var title: String?
-    var announce: String?
+    var description: String?
     var img: ImageContainer?
     var requestId: String?
     var articleUrl: URL? {
@@ -19,12 +19,6 @@ struct ArticleModel: Decodable {
         return URL(string:  "https://news.myseldon.com/ru/news/index/\(newsId)?requestId=\(requestId)")
                    }
 }
-//    init(title: String, description: String, imageLink: String, articleLink: String) {
-//        self.title = title
-//        self.description = description
-//        self.imageLink = imageLink
-//        self.articleLink = articleLink
-//    }
 
 struct ImageContainer: Decodable {
     var url: URL?

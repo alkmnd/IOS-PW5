@@ -14,6 +14,8 @@
 		09CEFAB5273C5A22005B5AD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CEFAB3273C5A22005B5AD5 /* LaunchScreen.storyboard */; };
 		09CEFAC3273C7476005B5AD5 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAC2273C7476005B5AD5 /* ArticleModel.swift */; };
 		09CEFAC8273C85C3005B5AD5 /* ArticlePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */; };
+		09CEFACA273C88C3005B5AD5 /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */; };
+		09CEFACC273C9030005B5AD5 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFACB273C9030005B5AD5 /* ArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		09CEFAB6273C5A22005B5AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09CEFAC2273C7476005B5AD5 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePage.swift; sourceTree = "<group>"; };
+		09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
+		09CEFACB273C9030005B5AD5 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				09CEFAB1273C5A22005B5AD5 /* Assets.xcassets */,
 				09CEFAB3273C5A22005B5AD5 /* LaunchScreen.storyboard */,
 				09CEFAB6273C5A22005B5AD5 /* Info.plist */,
+				09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */,
+				09CEFACB273C9030005B5AD5 /* ArticleCell.swift */,
 			);
 			path = nabelova_1PW5;
 			sourceTree = "<group>";
@@ -176,6 +182,8 @@
 				09CEFAC8273C85C3005B5AD5 /* ArticlePage.swift in Sources */,
 				09CEFAC3273C7476005B5AD5 /* ArticleModel.swift in Sources */,
 				09CEFAA9273C5A21005B5AD5 /* AppDelegate.swift in Sources */,
+				09CEFACC273C9030005B5AD5 /* ArticleCell.swift in Sources */,
+				09CEFACA273C88C3005B5AD5 /* ArticleManager.swift in Sources */,
 				09CEFAAB273C5A21005B5AD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

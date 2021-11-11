@@ -9,30 +9,30 @@ import UIKit
 
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        300
+        return manager.articles.count
     }
-    
+
+    let manager = ArticleManager()
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-           cell.textLabel?.text = ":("
-           return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleCell
+        cell?.titleLabel.text = manager.articles[indexPath.row].title
+        cell?.descriptionLabel.text = manager.articles[indexPath.row].description
+
+            return cell ?? UITableViewCell()
     }
-    
 
     let tableView = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(self.tableView)
-        self.tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        self.tableView.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
         updateLayout(with: self.view.frame.size)
         
     }
-    
-   
-    
 
     private func updateLayout(with size: CGSize) {
        self.tableView.frame = CGRect.init(origin: .zero, size: size)
@@ -43,8 +43,4 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
           self.updateLayout(with: size)
        }, completion: nil)
     }
-}
-
-class TableViewCell: UITableViewCell {
-
 }
