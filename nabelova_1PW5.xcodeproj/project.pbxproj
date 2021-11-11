@@ -16,6 +16,8 @@
 		09CEFAC8273C85C3005B5AD5 /* ArticlePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */; };
 		09CEFACA273C88C3005B5AD5 /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */; };
 		09CEFACC273C9030005B5AD5 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFACB273C9030005B5AD5 /* ArticleCell.swift */; };
+		09CEFAD6273DC52F005B5AD5 /* UIView_Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAD5273DC52F005B5AD5 /* UIView_Pin.swift */; };
+		09CEFAD8273DC54F005B5AD5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEFAD7273DC54F005B5AD5 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePage.swift; sourceTree = "<group>"; };
 		09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		09CEFACB273C9030005B5AD5 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		09CEFAD5273DC52F005B5AD5 /* UIView_Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Pin.swift; sourceTree = "<group>"; };
+		09CEFAD7273DC54F005B5AD5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				09CEFAB6273C5A22005B5AD5 /* Info.plist */,
 				09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */,
 				09CEFACB273C9030005B5AD5 /* ArticleCell.swift */,
+				09CEFAD5273DC52F005B5AD5 /* UIView_Pin.swift */,
 			);
 			path = nabelova_1PW5;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				09CEFAAC273C5A21005B5AD5 /* ArticleViewController.swift */,
+				09CEFAD7273DC54F005B5AD5 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CEFAAD273C5A21005B5AD5 /* ArticleViewController.swift in Sources */,
+				09CEFAD8273DC54F005B5AD5 /* WebViewController.swift in Sources */,
 				09CEFAC8273C85C3005B5AD5 /* ArticlePage.swift in Sources */,
+				09CEFAD6273DC52F005B5AD5 /* UIView_Pin.swift in Sources */,
 				09CEFAC3273C7476005B5AD5 /* ArticleModel.swift in Sources */,
 				09CEFAA9273C5A21005B5AD5 /* AppDelegate.swift in Sources */,
 				09CEFACC273C9030005B5AD5 /* ArticleCell.swift in Sources */,

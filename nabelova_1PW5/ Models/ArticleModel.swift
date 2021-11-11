@@ -10,7 +10,7 @@ import UIKit
 struct ArticleModel: Decodable {
     var newsId: Int?
     var title: String?
-    var description: String?
+    var announce: String?
     var img: ImageContainer?
     var requestId: String?
     var articleUrl: URL? {

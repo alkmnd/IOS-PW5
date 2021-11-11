@@ -6,10 +6,11 @@
 //
 
 import Foundation
+
 import UIKit
 
 class ArticleCell: UITableViewCell {
-    public let articleModel = ArticleModel()
+    public var articleModel = ArticleModel()
     let image: UIImageView = {
         let control = UIImageView()
         return control
@@ -45,4 +46,20 @@ class ArticleCell: UITableViewCell {
            }
            return UIImage(data: data)
        }
+    func setupCell(){
+            backgroundColor = UIColor.gray
+            DispatchQueue.main.async {
+                self.image.image = self.loadImage()
+            }
+            titleLabel.text = articleModel.title
+            descriptionLabel.text = articleModel.announce
+            addSubview(titleLabel)
+            addSubview(descriptionLabel)
+            titleLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: -40).isActive = true
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
+            descriptionLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+            backgroundView = image
+        }
+        
 }
