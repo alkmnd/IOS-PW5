@@ -68,16 +68,14 @@
 		09CEFAA7273C5A21005B5AD5 /* nabelova_1PW5 */ = {
 			isa = PBXGroup;
 			children = (
-				09CEFAC6273C85B3005B5AD5 /* Views */,
+				09CEFADF273DD24D005B5AD5 /* Cells */,
+				09CEFADE273DD22C005B5AD5 /* Instruments */,
 				09CEFAC1273C73CF005B5AD5 /*  Models */,
 				09CEFABD273C5A6C005B5AD5 /* Controllers */,
 				09CEFABC273C5A2D005B5AD5 /* Delegates */,
 				09CEFAB1273C5A22005B5AD5 /* Assets.xcassets */,
 				09CEFAB3273C5A22005B5AD5 /* LaunchScreen.storyboard */,
 				09CEFAB6273C5A22005B5AD5 /* Info.plist */,
-				09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */,
-				09CEFACB273C9030005B5AD5 /* ArticleCell.swift */,
-				09CEFAD5273DC52F005B5AD5 /* UIView_Pin.swift */,
 			);
 			path = nabelova_1PW5;
 			sourceTree = "<group>";
@@ -104,17 +102,27 @@
 		09CEFAC1273C73CF005B5AD5 /*  Models */ = {
 			isa = PBXGroup;
 			children = (
+				09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */,
 				09CEFAC2273C7476005B5AD5 /* ArticleModel.swift */,
 			);
 			path = " Models";
 			sourceTree = "<group>";
 		};
-		09CEFAC6273C85B3005B5AD5 /* Views */ = {
+		09CEFADE273DD22C005B5AD5 /* Instruments */ = {
 			isa = PBXGroup;
 			children = (
-				09CEFAC7273C85C3005B5AD5 /* ArticlePage.swift */,
+				09CEFAD5273DC52F005B5AD5 /* UIView_Pin.swift */,
+				09CEFAC9273C88C3005B5AD5 /* ArticleManager.swift */,
 			);
-			path = Views;
+			path = Instruments;
+			sourceTree = "<group>";
+		};
+		09CEFADF273DD24D005B5AD5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				09CEFACB273C9030005B5AD5 /* ArticleCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
