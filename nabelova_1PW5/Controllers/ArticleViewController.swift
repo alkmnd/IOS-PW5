@@ -23,14 +23,14 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.layer.masksToBounds = true
         return cell
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let article = manager.articles?[indexPath.row]
-//        let wc = WebViewController()
-//        wc.url = article?.articleUrl
-//        navigationController?.pushViewController(wc, animated: true)
-//
-//    }
-//
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = manager.articles?[indexPath.row]
+        let wc = WebViewController()
+        wc.url = article?.articleUrl
+        navigationController?.pushViewController(wc, animated: true)
+
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
            return 1
        }
