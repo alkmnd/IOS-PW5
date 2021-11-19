@@ -62,40 +62,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
            return 1
        }
-
-    private func handleMarkAsShare() {
-        print("Share")
-    }
     
-    func tableView(_ tableView: UITableView,
-                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal,
-                                        title: "Share") { [weak self] (action, view, completionHandler) in
-                                            self?.handleMarkAsShare()
-                                            completionHandler(true)
-        }
-        action.backgroundColor = .systemBlue
-        return UISwipeActionsConfiguration(actions: [action])
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-    
-    func tableView(_ tableView: UITableView,
-                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal,
-                                        title: "Share") { [weak self] (action, view, completionHandler) in
-                                            self?.handleMarkAsShare()
-                                            completionHandler(true)
-        }
-        action.backgroundColor = .systemBlue
-        return UISwipeActionsConfiguration(actions: [action])
-    
-    }
-    
-        
         private func setupArticleView() {
             let rect = CGRect(x: 15, y: 15, width: view.frame.width - 30, height: view.frame.height - 30)
             
@@ -131,5 +98,43 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
           self.updateLayout(with: size)
        }, completion: nil)
     }
+    private func handleMarkAsShare(index: IndexPath) {
+        if let url = news[index.row].articleUrl{
+            var urlToShare = [Any]()
+            urlToShare.append(url)
+            let activityviewcontroller = UIActivityViewController(activityItems:urlToShare,applicationActivities: nil)
+            self.present(activityviewcontroller, animated: true, completion: nil)
+        }
+        print("Share")
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal,
+                                        title: "Share") { [weak self] (action, view, completionHandler) in
+            self?.handleMarkAsShare(index: indexPath)
+                                            completionHandler(true)
+        }
+        action.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView,
+                       trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal,
+                                        title: "Share") { [weak self] (action, view, completionHandler) in
+            self?.handleMarkAsShare(index: indexPath)
+                                            completionHandler(true)
+        }
+        action.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [action])
+    
+    }
+        
 }
 
